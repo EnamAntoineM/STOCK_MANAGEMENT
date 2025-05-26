@@ -13,5 +13,5 @@
     #include "alias.h"
     #include "qt.h"
     #include "QObject"
-    #include "/usr/include/mysql/mysql.h"
+    #include <mysql/mysql.h>
 #endif

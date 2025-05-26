@@ -60,4 +60,7 @@
     #include "qprocess.h"
     #include "QPlainTextEdit"
     #include "QJSEngine"
+    #include "QEasingCurve"
+    #include "QPropertyAnimation"
+    #include "QStackedLayout"
 #endif
