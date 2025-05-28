@@ -25,6 +25,13 @@ public:
     QPushRoundButton *my_tables;
     QPushRoundButton *about_us;
     QVBoxLayout *menubar_layout;
+    QVBoxLayout *primary;
+    QWidget *primary_page;
+    QWidget *toolbarr;
+    QHBoxLayout *toolbar;
+    QPushRoundButton *file_btn;
+    QPushRoundButton *export_btn;
+    QPushRoundButton *logout_btn;
     QHBoxLayout *centralwid_layout;
     QStackedLayout *home_tables;
     QWidget *home_page;

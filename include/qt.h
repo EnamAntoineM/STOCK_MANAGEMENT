@@ -21,6 +21,7 @@
     #include <QCheckBox>
     #include <QRadioButton>
     #include <QSpinBox>
+    #include <QToolButton>
     #include <QSlider>
     #include "QProgressBar"
     #include <QDateEdit>

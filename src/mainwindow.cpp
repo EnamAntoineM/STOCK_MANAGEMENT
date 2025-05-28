@@ -34,6 +34,50 @@ MainWindow::MainWindow(QWidget *parent)
     stack = new QStackedLayout(centralWidget);
     insideapp = new QWidget();
     loginpage = new QWidget();
+    primary = new QVBoxLayout();
+    primary_page = new QWidget();
+
+    //------------SETTING UP TOOLBAR-------------//
+    QString toolbar_stylesheet = (R"(
+        #QPushRoundButton {
+            color: black;
+            font-size: 14px;
+            font-weight: bold;
+            border: 0px solid rgb(27, 27, 27) ;
+            border-radius: 36px;
+        }
+        #QPushRoundButton:hover {
+            background-color:rgb(190, 227, 252);
+        }
+        #QPushRoundButton:pressed {
+            background-color:rgb(52, 128, 175);
+        }
+    )");
+    toolbarr = new QWidget();
+    toolbar = new QHBoxLayout();
+    QPushButton *sizelay = new QPushButton();
+    sizelay -> setFixedSize(QSize(0, 33));
+    sizelay -> setStyleSheet("border: none;");
+    file_btn = new QPushRoundButton("File");
+    export_btn = new QPushRoundButton("Export");
+    logout_btn = new QPushRoundButton("Logout");
+    file_btn -> setFixedSize(QSize(70, 30));
+    export_btn -> setFixedSize(QSize(70, 30));
+    logout_btn -> setFixedSize(QSize(80, 30));
+    file_btn -> setStyleSheet(toolbar_stylesheet);
+    export_btn -> setStyleSheet(toolbar_stylesheet);
+    logout_btn -> setStyleSheet(toolbar_stylesheet);
+    toolbar -> addWidget(sizelay);
+    toolbar -> addWidget(file_btn);
+    toolbar -> addWidget(export_btn);
+    toolbar -> addStretch();
+    toolbar -> addWidget(logout_btn, 1,Qt::AlignRight);
+    toolbar -> setSpacing(0);
+    toolbarr -> setLayout(toolbar);
+    toolbarr -> setContentsMargins(0, 0, 0, 0);
+    toolbar -> setContentsMargins(0, 0, 0, 0);
+    toolbarr->setStyleSheet("border: 0.5px solid rgb(171, 172, 173);");
+    //------------SETTING UP TOOLBAR-------------//
 
     //     -------LOGO---------    //
     logo = QPixmap("assets/logo.png");
@@ -131,10 +175,17 @@ MainWindow::MainWindow(QWidget *parent)
     centralwid_layout -> addWidget(mainwidget, 10);
     centralwid_layout -> addWidget(insertion_panel, 5);
     insideapp -> setLayout(centralwid_layout);
+    primary -> setContentsMargins(0, 0, 0, 0);
+    primary_page -> setContentsMargins(0, 0, 0, 0);
+    primary -> setSpacing(0);
+    centralwid_layout-> setSpacing(0);
+    primary -> addWidget(toolbarr);
+    primary -> addWidget(insideapp);
+    primary_page -> setLayout(primary);
     //------------INSIDE APP---------------//
 
     stack -> addWidget(loginpage);
-    stack -> addWidget(insideapp);
+    stack -> addWidget(primary_page);
     stack -> setCurrentWidget(loginpage);
     
     QObject::connect(menu, &QPushButton::clicked, this, &MainWindow::on_toggle_clicked);
@@ -175,7 +226,7 @@ void MainWindow::on_login_clicked(void)
     // mysql_free_result(result);
     // mysql_close(MainWindow::connect);
     showMaximized();
-    stack -> setCurrentWidget(insideapp);
+    stack -> setCurrentWidget(primary_page);
 }
 
 MainWindow::~MainWindow() {}
