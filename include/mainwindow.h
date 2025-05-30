@@ -51,6 +51,7 @@ public:
 
     //----------MAIN_CENTER_WIDGET------------//
     QWidget *mainwidget;
+    QStackedLayout *main_widget_layout;
     //----------MAIN_CENTER_WIDGET------------//
 
     //---------LEFT_PANEL--------//
