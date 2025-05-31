@@ -1,3 +1,12 @@
+/*
+** MY_PROJECT, 2025
+** toolbar.cpp
+** PROVISION_MNG
+** Author: Enam KODJOH-KPAKPASSOU
+** Email: eakodjoh-kpakpassou@st.ug.edu.gh
+** File description:
+*/
+
 #include "../include/mainwindow.h"
 
 void MainWindow::set_custom_toolbar(void)

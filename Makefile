@@ -1,13 +1,10 @@
 #
 ## MY_PROJECT, 2025
 ## Makefile
-## PASSWD_MANAGER
+## PROVISION_MNG
 ## Author: Enam KODJOH-KPAKPASSOU
 ## Email: eakodjoh-kpakpassou@st.ug.edu.gh
-## File description:
-#
-
-# Qt Application Makefile
+## File description: Qt Application Makefile
 
 # Compiler and flags
 CXX = g++

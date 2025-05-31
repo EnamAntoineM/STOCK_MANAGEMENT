@@ -1,3 +1,12 @@
+/*
+** MY_PROJECT, 2025
+** QRoundedLineEdit.cpp
+** PROVISION_MNG
+** Author: Enam KODJOH-KPAKPASSOU
+** Email: eakodjoh-kpakpassou@st.ug.edu.gh
+** File description:
+*/
+
 #include "../../include/my.h"
 #include "../header/round_qlineedit.h"
 
